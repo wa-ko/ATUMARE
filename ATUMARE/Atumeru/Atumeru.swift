@@ -16,6 +16,8 @@ struct Atumeru: View {
         let customColor = Color(red: red, green: green, blue: blue)
         @State var name = ""
         @State var isShowingView: Bool = false
+        @State var date = Date()
+        @State var selectedValue: Int = 1
 
         return ZStack {
             Color(customColor)
@@ -27,6 +29,9 @@ struct Atumeru: View {
                 .cornerRadius(30)
             
             VStack {
+                Text("設定画面")
+                    .padding(.bottom, 30)
+                    .font(.title3)
                 VStack(spacing: 0) {
                     Text("名前")
                         .padding(.bottom, 0)
@@ -45,6 +50,35 @@ struct Atumeru: View {
                     }
                     .sheet(isPresented: $isShowingView) {
                         AtumeruWeiting()
+                    }
+                }
+                VStack(spacing: 15) {
+                    Text("目的地")
+                        .padding(.top, 10)
+                    Button {
+                        isShowingView.toggle()
+                    } label: {
+                        Text("こちらをタップ")
+                    }
+                    .sheet(isPresented: $isShowingView) {
+                        AtumeruWeiting()
+                    }
+                }
+                VStack(spacing: 15) {
+                    Text("出発時間")
+                        .padding(.top, 10)
+                    DatePicker("", selection: $date, displayedComponents: .hourAndMinute)
+                        .labelsHidden()
+                }
+                VStack(spacing: 15) {
+                    Text("定員 (自身を除く)")
+                        .padding(.top, 10)
+                    Picker("人数を選択", selection: $selectedValue) {
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                            Text("3").tag(3)
+                            Text("4").tag(4)
+                            Text("5").tag(5)
                     }
                 }
             }
