@@ -5,4 +5,9 @@
 //  Created by 若生優希 on 2023/10/09.
 //
 
-import Foundation
+import SwiftUI
+import GoogleMaps
+
+#Preview {
+    GoogleMapView()
+}

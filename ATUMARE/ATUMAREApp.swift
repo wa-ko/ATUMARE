@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+let API_KEY = "AIzaSyCIakSnwCU-sDNvReBVyxEvIKVRqDG6Gn4"
 @main
 struct ATUMAREApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
             ContentView()
