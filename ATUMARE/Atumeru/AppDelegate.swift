@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ATUMARE
 //
-//  Created by 今村大輝 on 2023/10/24.
+//  Created by 今村大輝 on 2023/10/30.
 //
 
 import Foundation

@@ -9,12 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            GoogleMapView()
-        }
+        Atumeru()
     }
 }
 
 #Preview {
-    ContentView()
+    Atumeru()
 }

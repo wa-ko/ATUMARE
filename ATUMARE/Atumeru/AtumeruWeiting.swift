@@ -31,15 +31,25 @@ struct AtumeruWeiting: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(0..<100, id: \.self) { _ in
-                        Rectangle()
-                            .foregroundColor(.clear)
-                            .frame(width: 298, height: 52)
-                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                            .cornerRadius(50)
+                            ZStack {
+                                Rectangle()
+                                    .foregroundColor(.clear)
+                                    .frame(width: 298, height: 52)
+                                    .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                                    .cornerRadius(50)
+
+                                HStack {
+                                    Text("名前")
+                                        .foregroundColor(.black)
+                                        .font(.system(size: 17))
+                                    Text("~までお願いします。")
+                                }
+                            }
                         }
                     }
                 }
                 .frame(height: 510)
+
             }
         }
     }
