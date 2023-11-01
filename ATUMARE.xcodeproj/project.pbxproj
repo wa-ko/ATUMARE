@@ -16,6 +16,9 @@
 		5233650E2AD3F4DB00D792C3 /* AtumaruMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5233650D2AD3F4DB00D792C3 /* AtumaruMap.swift */; };
 		523365102AD3F4E700D792C3 /* AtumeruMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5233650F2AD3F4E700D792C3 /* AtumeruMap.swift */; };
 		523365132AD3F54C00D792C3 /* AtumeruWeiting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523365122AD3F54C00D792C3 /* AtumeruWeiting.swift */; };
+		590C460C2AEF8E1A005ECEFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590C460B2AEF8E1A005ECEFA /* AppDelegate.swift */; };
+		5971F99F2AE804C700D22062 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971F99E2AE804C700D22062 /* GoogleMapView.swift */; };
+		B5802A524366CC5451B03EFA /* libPods-ATUMARE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A896A269ED75DD6AB5EBF6 /* libPods-ATUMARE.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,11 @@
 		5233650D2AD3F4DB00D792C3 /* AtumaruMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtumaruMap.swift; sourceTree = "<group>"; };
 		5233650F2AD3F4E700D792C3 /* AtumeruMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtumeruMap.swift; sourceTree = "<group>"; };
 		523365122AD3F54C00D792C3 /* AtumeruWeiting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtumeruWeiting.swift; sourceTree = "<group>"; };
+		590C460B2AEF8E1A005ECEFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5971F99E2AE804C700D22062 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
+		91A896A269ED75DD6AB5EBF6 /* libPods-ATUMARE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ATUMARE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB8BC028B0E57358B3A03BF6 /* Pods-ATUMARE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATUMARE.debug.xcconfig"; path = "Target Support Files/Pods-ATUMARE/Pods-ATUMARE.debug.xcconfig"; sourceTree = "<group>"; };
+		BD7AB30CA00133B82F83D687 /* Pods-ATUMARE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATUMARE.release.xcconfig"; path = "Target Support Files/Pods-ATUMARE/Pods-ATUMARE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5802A524366CC5451B03EFA /* libPods-ATUMARE.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +56,8 @@
 			children = (
 				523364F72AD3F3DE00D792C3 /* ATUMARE */,
 				523364F62AD3F3DE00D792C3 /* Products */,
+				8DB05E4E3A379BB62946E409 /* Pods */,
+				5F6A85147476738B4224050F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,7 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				523365062AD3F42C00D792C3 /* Atumeru.swift */,
+				590C460B2AEF8E1A005ECEFA /* AppDelegate.swift */,
 				5233650F2AD3F4E700D792C3 /* AtumeruMap.swift */,
+				5971F99E2AE804C700D22062 /* GoogleMapView.swift */,
 				523365122AD3F54C00D792C3 /* AtumeruWeiting.swift */,
 			);
 			path = Atumeru;
@@ -98,6 +111,23 @@
 			path = Atumaru;
 			sourceTree = "<group>";
 		};
+		5F6A85147476738B4224050F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91A896A269ED75DD6AB5EBF6 /* libPods-ATUMARE.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DB05E4E3A379BB62946E409 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB8BC028B0E57358B3A03BF6 /* Pods-ATUMARE.debug.xcconfig */,
+				BD7AB30CA00133B82F83D687 /* Pods-ATUMARE.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 523365032AD3F3E000D792C3 /* Build configuration list for PBXNativeTarget "ATUMARE" */;
 			buildPhases = (
+				0706CA72B41D22BB0858B07C /* [CP] Check Pods Manifest.lock */,
 				523364F12AD3F3DE00D792C3 /* Sources */,
 				523364F22AD3F3DE00D792C3 /* Frameworks */,
 				523364F32AD3F3DE00D792C3 /* Resources */,
+				6193A11093D293282D389CBB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,13 +195,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0706CA72B41D22BB0858B07C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ATUMARE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6193A11093D293282D389CBB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ATUMARE/Pods-ATUMARE-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ATUMARE/Pods-ATUMARE-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ATUMARE/Pods-ATUMARE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		523364F12AD3F3DE00D792C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5971F99F2AE804C700D22062 /* GoogleMapView.swift in Sources */,
 				523365102AD3F4E700D792C3 /* AtumeruMap.swift in Sources */,
 				523364FB2AD3F3DE00D792C3 /* ContentView.swift in Sources */,
+				590C460C2AEF8E1A005ECEFA /* AppDelegate.swift in Sources */,
 				523364F92AD3F3DE00D792C3 /* ATUMAREApp.swift in Sources */,
 				5233650E2AD3F4DB00D792C3 /* AtumaruMap.swift in Sources */,
 				523365072AD3F42C00D792C3 /* Atumeru.swift in Sources */,
@@ -218,7 +294,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -281,7 +357,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -302,13 +378,14 @@
 		};
 		523365042AD3F3E000D792C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB8BC028B0E57358B3A03BF6 /* Pods-ATUMARE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ATUMARE/Preview Content\"";
-				DEVELOPMENT_TEAM = 9ACM3MY2N2;
+				DEVELOPMENT_TEAM = YYC7HTD3V5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -331,13 +408,14 @@
 		};
 		523365052AD3F3E000D792C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD7AB30CA00133B82F83D687 /* Pods-ATUMARE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ATUMARE/Preview Content\"";
-				DEVELOPMENT_TEAM = 9ACM3MY2N2;
+				DEVELOPMENT_TEAM = YYC7HTD3V5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
