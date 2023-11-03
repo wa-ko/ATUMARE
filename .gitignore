@@ -1,3 +1,4 @@
 .DS_Store
 ATUMARE.xcodeproj
 ATUMARE.xcworkspace
+node_modules
