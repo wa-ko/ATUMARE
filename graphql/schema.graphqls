@@ -1,0 +1,64 @@
+"""
+A directive used by the Apollo iOS client to annotate operations or fragments that should be used exclusively for generating local cache mutations instead of as standard operations.
+"""
+directive @apollo_client_ios_localCacheMutation on QUERY | MUTATION | SUBSCRIPTION | FRAGMENT_DEFINITION
+
+""""""
+type Query {
+  """"""
+  allItems: [Item]
+}
+
+""""""
+type Item {
+  """"""
+  capacity: Int
+
+  """"""
+  departure: String
+
+  """"""
+  destination: String
+
+  """"""
+  name: String
+
+  """"""
+  passenger: Int
+
+  """"""
+  passengers: [Passenger]
+
+  """"""
+  time: String
+
+  """"""
+  uuid: String
+}
+
+""""""
+input PassengerInput {
+  """"""
+  namelist: String
+
+  """"""
+  comment: String
+}
+
+""""""
+type Passenger {
+  """"""
+  comment: String
+
+  """"""
+  namelist: String
+}
+
+""""""
+type Mutation {
+  """"""
+  incrementPassenger(comment: String, uuid: String!, name: String!, namelist: String): Item
+
+  """"""
+  putItem(time: String!, capacity: Int!, passenger: Int!, passengers: [PassengerInput], uuid: String!, name: String!, departure: String!, destination: String!): Item
+}
