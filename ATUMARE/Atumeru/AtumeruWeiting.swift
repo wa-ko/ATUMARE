@@ -9,6 +9,8 @@ import SwiftUI
 import Foundation
 
 struct AtumeruWeiting: View {
+    @State private var isActive = false
+    
     var body: some View {
         let red: Double = 197 / 255.0
         let green: Double = 198 / 255.0
@@ -30,26 +32,30 @@ struct AtumeruWeiting: View {
                     .font(.title3)
                 ScrollView {
                     LazyVStack {
-                        ForEach(0..<100, id: \.self) { _ in
-                            ZStack {
-                                Rectangle()
+                        ForEach(0..<100, id: \.self)
+                        { _ in
+                        Button(action: {
+                            isActive = true
+                        }) {
+                                ZStack {
+                                    Rectangle()
                                     .foregroundColor(.clear)
                                     .frame(width: 298, height: 52)
                                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                                     .cornerRadius(50)
 
-                                HStack {
-                                    Text("名前")
+                                    HStack {
+                                        Text("名前")
                                         .foregroundColor(.black)
                                         .font(.system(size: 17))
-                                    Text("~までお願いします。")
+                                        Text("~までお願いします。")
+                                    }
                                 }
                             }
                         }
                     }
                 }
                 .frame(height: 510)
-
             }
         }
     }
