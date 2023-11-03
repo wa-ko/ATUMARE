@@ -7,39 +7,59 @@
 
 import SwiftUI
 
+struct Item: Identifiable {
+    var id = UUID()
+    var name: String
+}
+
 struct Atumaru: View {
+    @State private var isNavigationActive = false
+    
+    let items: [Item] = [
+            Item(name: "佐藤"),
+            Item(name: "高橋"),
+            Item(name: "鈴木"),
+        ]
+    
     var body: some View {
         let red: Double = 197 / 255.0
         let green: Double = 198 / 255.0
         let blue: Double = 182 / 255.0
         let customColor = Color(red: red, green: green, blue: blue)
         
-        ZStack {
-            Color(customColor)
-                .ignoresSafeArea()
-            
-            ScrollView {
-                LazyVStack {
-                    ForEach(0..<100, id: \.self) { _ in
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(.clear)
-                                .frame(width: 298, height: 52)
-                                .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                                .cornerRadius(50)
+        NavigationStack {
+            ZStack {
+                Color(customColor)
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    LazyVStack {
+                        ForEach(items) { item in
+                            Button(action: {
+                                isNavigationActive = true
+                            }) {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.clear)
+                                        .frame(width: 298, height: 52)
+                                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                                        .cornerRadius(50)
 
-                            HStack(spacing: 70) {
-                                Text("名前")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 17))
-                                Text("11:30時発")
-                                Text("2/4")
+                                    HStack(spacing: 70) {
+                                        Text(item.name)
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 17))
+                                        Text("11:30時発")
+                                        Text("2/4")
+                                    }
+                                }
                             }
                         }
                     }
-                }
-            }
-            .frame(height: 510)
+                }.frame(height: 510)
+            }.navigationDestination(isPresented: $isNavigationActive, destination: {
+                AtumaruMap()
+            })
         }
     }
 }
