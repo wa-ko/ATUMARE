@@ -13,6 +13,9 @@ struct Atumeru: View {
     @State private var destinationName = ""
     @State private var date = Date()
     @State private var selectedValue = 1
+    @State private var isActive_car = false
+    @State private var isActive_center = false
+    @State private var isActive_walker = false
 
     var body: some View {
         let red: Double = 197 / 255.0
@@ -23,7 +26,6 @@ struct Atumeru: View {
         NavigationStack {
             ZStack {
                 Color(customColor)
-                    .ignoresSafeArea()
 
                 Rectangle()
                     .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
@@ -78,6 +80,72 @@ struct Atumeru: View {
                             Text("4").tag(4)
                             Text("5").tag(5)
                         }
+                    }
+                }
+            }
+            .navigationBarTitle("ATSUMARE", displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    HStack(spacing: -10) {
+                        Button(action: {
+                            isActive_car = true
+                                }) {
+                                    VStack(spacing: -5) {
+                                    Image("directions_car-directions_car_symbol")
+                                    .resizable()
+                                    .foregroundStyle(Color.black)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 35, height: 45)
+                                    .padding(.top, 30)
+                                        
+                                    Text("ATSUMERU")
+                                    .foregroundStyle(Color.black)
+                                    .font(.system(size: 15))
+                                    }
+                                }
+                        
+                        Button(action: {
+                            isActive_center = true
+                                }) {
+                                    ZStack() {
+                                    Image("red_round")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 125, height: 90)
+                                    .padding(.top, -40)
+                                        
+                                    Circle()
+                                    .fill(Color.black)
+                                    .frame(width: 35, height: 80)
+                                    .padding(.top, -35)
+                                    .overlay(
+                                        Circle()
+                                        .stroke      (Color.black, lineWidth: 4)
+                                        .frame(width: 60, height: 50)
+                                        .padding(.top, -35)
+                                    )
+                                    }
+                                }
+                        
+                        Button(action: {
+                            isActive_walker = true
+                                }) {
+                                    VStack(spacing: 5) {
+                                    Image("hail-hail_symbol")
+                                    .resizable()
+                                    .foregroundStyle(Color.black)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 35, height: 35)
+                                    .padding(.top, 30)
+                                        
+                                    Text("ATSUMARU")
+                                    .font(.system(size: 15))
+                                    .foregroundStyle(Color.black)
+                                    }
+                                }
+                                .navigationDestination(isPresented: $isActive_walker, destination: {
+                                    Atumaru()
+                                })
                     }
                 }
             }
